@@ -1,22 +1,21 @@
 <odoo>
     <data>
-        <!-- <template id="listing"> -->
-        <!--   <ul> -->
-        <!--     <li t-foreach="objects" t-as="object"> -->
-        <!--       <a t-attf-href="#{ root }/objects/#{ object.id }"> -->
-        <!--         <t t-esc="object.display_name"/> -->
-        <!--       </a> -->
-        <!--     </li> -->
-        <!--   </ul> -->
-        <!-- </template> -->
-        <!-- <template id="object"> -->
-        <!--   <h1><t t-esc="object.display_name"/></h1> -->
-        <!--   <dl> -->
-        <!--     <t t-foreach="object._fields" t-as="field"> -->
-        <!--       <dt><t t-esc="field"/></dt> -->
-        <!--       <dd><t t-esc="object[field]"/></dd> -->
-        <!--     </t> -->
-        <!--   </dl> -->
-        <!-- </template> -->
+        <template id="assets_frontend" inherit_id="website.assets_frontend" name="Calculator Module">
+            <xpath expr="." position="inside">
+                <base href="/" />
+                <link rel="stylesheet" href="/odoocalc/static/src/css/styles.css"/>
+            </xpath>
+        </template>
+        <template id="index" name="Calculator Template">
+            <t t-call="website.layout">
+                <app-root></app-root>
+                <script src="/odoocalc/static/src/js/runtime-es2015.js" type="text/javascript"></script>
+                <script src="/odoocalc/static/src/js/polyfills-es2015.js" type="text/javascript"></script>
+                <script src="/odoocalc/static/src/js/runtime-es5.js" type="text/javascript" nomodule="nomodule"></script>
+                <script src="/odoocalc/static/src/js/polyfills-es5.js" type="text/javascript" nomodule="nomodule"></script>
+                <script src="/odoocalc/static/src/js/main-es2015.js" type="text/javascript"></script>
+                <script src="/odoocalc/static/src/js/main-es5.js" type="text/javascript" nomodule="nomodule"></script>
+            </t>
+        </template>
     </data>
 </odoo>

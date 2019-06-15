@@ -1,19 +1,11 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
-    <!--
-    <record model="ir.ui.view" id="odoocalc.list">
-      <field name="name">odoocalc list</field>
-      <field name="model">odoocalc.odoocalc</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-        </tree>
-      </field>
-    </record>
-    -->
+    
+    <!-- <record model="ir.ui.view" id="odoocalc.index">
+      
+    </record> -->
+   
 
     <!-- actions opening views on models -->
     <!--
@@ -41,9 +33,9 @@
     -->
 
     <!-- Top menu item -->
-    <!--
-    <menuitem name="odoocalc" id="odoocalc.menu_root"/>
-    -->
+    
+    <!-- <menuitem name="Calculator" id="odoocalc.menu_root"/> -->
+   
     <!-- menu categories -->
     <!--
     <menuitem name="Menu 1" id="odoocalc.menu_1" parent="odoocalc.menu_root"/>

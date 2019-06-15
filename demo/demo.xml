@@ -1,17 +1,5 @@
 <odoo>
     <data>
-        <record model="odoocal.course" id="course0">
-            <field name="name">Course 0</field>
-            <field name="description">Course 0's description</field>
-        </record>
-        <record model="odoocal.course" id="course1">
-            <field name="name">Course 1</field>
-            <field name="description">Course 1's description</field>
-        </record>
-        </record>
-        <record model="odoocal.course" id="course2">
-            <field name="name">Course 2</field>
-            <field name="description">Course 2's description</field>
-        </record>
+
     </data>
 </odoo>

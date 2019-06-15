@@ -6,7 +6,7 @@
         An awesome calculator to make Jimmy happy""",
 
     'description': """
-        This addon allows you to calculate everything you can think of,
+        This thing allows you to calculate everything you can think of,
         including the amount of time required to find the infinity stones.
     """,
 
@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'website'],
 
     # always loaded
     'data': [
