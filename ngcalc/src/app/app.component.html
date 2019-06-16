@@ -1,20 +1,57 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
+<article>
+  <header>
+    <h1>Odoo Calculator</h1>
+    <p>The best calculator you will ever use</p>
+  </header>
+  <main class="calc_container">
+    <section>
+      <button class="input_toggle_button" (click)="toggleInputMode()">Toggle Input mode</button>
+    </section>
+    <section class="section_textInput" *ngIf="shouldShowTextInput">
+        <div class="calc_header">
+            <div class="calc_input">
+                <label for="text_input">In:</label>
+                <input [(ngModel)]="inputText" id="text_input" type="text" class="textdisplay" />
+            </div>
+            <button class="btn_calculate" (click)="getResult()">Calculate</button>
+            <div class="calc_result">
+                <label for="touch_result">Out:</label>
+                <input [ngModel]="resultText" id="touch_result" class="textdisplay"[ngClass]="{'out_error_state': outputError}" type="text"  readonly/>
+            </div>
+          </div>
+    </section>
+    <section class="section_touchInput" *ngIf="shouldShowTouchInput">
+      <div class="calculator">
+        <div class="calc_header">
+          <div class="calc_input">
+              <label for="touch_input">In:</label>
+              <input [ngModel]="inputText" id="touch_input" type="text" readonly class="textdisplay" />
+          </div>
+          <div class="calc_result">
+              <label for="touch_result">Out:</label>
+              <input [ngModel]="resultText" id="touch_result" class="textdisplay" [ngClass]="{'out_error_state': outputError}" type="text" readonly />
+          </div>
+        </div>
+        <div class="calc_buttons">
+            <button (click)="calcButtonClicked($event)" class="btn_clear" aria-label="clear">C</button>
+            <button (click)="calcButtonClicked($event)" aria-label="delete">DEL</button>
+            <button (click)="calcButtonClicked($event)" aria-label="division">÷</button>
+            <button (click)="calcButtonClicked($event)" aria-label="seven">7</button>
+            <button (click)="calcButtonClicked($event)" aria-label="eight">8</button>
+            <button (click)="calcButtonClicked($event)" aria-label="nine">9</button>
+            <button (click)="calcButtonClicked($event)" aria-label="times">&times;</button>
+            <button (click)="calcButtonClicked($event)" aria-label="four">4</button>
+            <button (click)="calcButtonClicked($event)" aria-label="five">5</button>
+            <button (click)="calcButtonClicked($event)" aria-label="six">6</button>
+            <button (click)="calcButtonClicked($event)" aria-label="minus">-</button>
+            <button (click)="calcButtonClicked($event)" aria-label="one">1</button>
+            <button (click)="calcButtonClicked($event)" aria-label="two">2</button>
+            <button (click)="calcButtonClicked($event)" aria-label="three">3</button>
+            <button (click)="calcButtonClicked($event)" aria-label="plus">+</button>
+            <button (click)="calcButtonClicked($event)" class="btn_zero" aria-label="zero">0</button>
+            <button (click)="calcButtonClicked($event)" class="btn_equals" aria-label="equals">=</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</article>

@@ -11,8 +11,8 @@ app.get('/odoocalc/calculate', function (req, res) {
         .json({
             result:{
                 success: true,
-                errorMessage: 'message',
-                response: 1 + 9
+                errorMessage: 'Something went pretty bad, sorry',
+                output: 1 + 9
             }
         });
 });
@@ -24,8 +24,8 @@ app.post('/odoocalc/calculate', function (req, res) {
         .json({
             result:{
                 success: true,
-                errorMessage: 'message',
-                response: 2 + 9
+                errorMessage: 'Something went pretty bad, sorry',
+                output: 2 + 9
             }
         });
 });

@@ -1,0 +1,62 @@
+.input_toggle_button {
+    font-size: 1.5em;
+    height: 50px;;
+}
+
+.calc_container {
+    max-width: 400px;
+    margin-top: 15px;
+}
+
+.section_textInput, .section_touchInput {
+    margin-top: 10px;
+}
+
+.calculator {
+    display: grid;
+    grid-gap: 0.3em;
+}
+
+.calc_header {
+    display: grid;
+    grid-gap: 0.3em;
+}
+
+.calc_input, .calc_result {
+    display: grid;
+    grid-gap: 0.3em;
+    font-size: 2em;
+    grid-template-columns: 4ch minmax(50px, 1fr);
+}
+
+.calc_input > input[type='text'], .calc_result > input[type='text'] {
+    height: minmax(20px, 100px);
+    font-size: 1.2em;
+}
+
+.btn_calculate{
+    font-size: 2em;
+}
+
+.calc_buttons {
+    display: grid;
+    grid-gap: 0.3em;
+    grid-template-columns: repeat(4, minmax(20px, 100px));
+    grid-template-rows: repeat(5, minmax(20px, 100px));
+}
+
+.calc_buttons > button {
+    font-size: 2em;
+}
+
+.btn_clear {
+    grid-column: span 2
+}
+
+.btn_equals, .btn_zero {
+    grid-column: span 2;
+}
+
+.out_error_state {
+    border-color: red;
+}
