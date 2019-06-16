@@ -44,3 +44,7 @@ class Test_CalcFunctionality(unittest.TestCase):
         regex = r".*learned how to.*"
         match = re.match(regex, result['errorMessage'])
         self.assertNotEqual(match, None)
+
+    def test_supports_evaluating_non_standard_operators(self):
+        result = self.calculator.evalute(dict(input="2-5+9×2"))
+        self.assertEqual(result['output'], 15)

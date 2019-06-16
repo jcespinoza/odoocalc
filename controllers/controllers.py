@@ -16,4 +16,4 @@ class Odoocalc(http.Controller):
         calc = calc_src.Calculator()
         result = calc.evalute(dataObj)
 
-        return json.dumps(result)
+        return result

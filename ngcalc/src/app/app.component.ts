@@ -87,16 +87,21 @@ export class AppComponent implements OnInit{
     })
       .pipe( map((response:any) => {
         let { result } = response;
+        if(!result) {
+          throw new Error("Server is a bit sad and refused to do that :(");
+        }
         if(!result.success) {
           throw new Error(result.errorMessage);
         }
         return result;
       })).subscribe(
         r => {
+          console.log("Output: "+ r.output);
           this.resultText = r.output;
           this.outputError = false;
         },
         e=> {
+          console.error(e);
           this.resultText = e;
           this.outputError = true;
       });

@@ -1,23 +1,27 @@
 import re
+
 class Calculator():
     def add(self, x, y):
         return x + y
 
     def evalute(self, reqObj):
         strInput = reqObj['input']
-        inputMatches = re.match(r"^(\d)*\s*([+\-\/*÷]\s*(\d)*)*\s*$", strInput)
+        inputMatches = re.match(r"^(\d)*\s*([+\-\/*×÷]\s*(\d)*)*\s*$", strInput)
         if inputMatches == None:
             return {
                 'success': False,
                 'errorMessage': "I'm confused. Is that an arithmetic expression?",
                 'output': None
             }
+
+        strInput = strInput.replace("×", "*").replace("÷","/")
+
         try:
             evalResult = eval(strInput)
 
             return {
                 'success': True,
-                'errorMessage': "All cool",
+                'errorMessage': "All super cool",
                 'output': evalResult
             }
         except:
