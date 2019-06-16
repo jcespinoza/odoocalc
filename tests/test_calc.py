@@ -1,5 +1,4 @@
-# from controllers.calculator import Calculator
-from src.calculator import Calculator
+from controllers.calculator import Calculator
 import re
 import unittest
 
