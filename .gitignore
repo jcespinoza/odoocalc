@@ -139,3 +139,14 @@ dmypy.json
 .history
 
 # End of https://www.gitignore.io/api/python,visualstudiocode
+
+static/src/3rdpartylicenses.txt
+static/src/index.html
+static/src/favicon.ico
+static/src/main-es5.js
+static/src/main-es2015.js
+static/src/polyfills-es5.js
+static/src/polyfills-es2015.js
+static/src/runtime-es5.js
+static/src/runtime-es2015.js
+static/src/styles.css
