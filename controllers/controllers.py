@@ -7,7 +7,12 @@ class Odoocalc(http.Controller):
     def index(self, **kw):
         return http.request.render('odoocalc.index')
 
-    @http.route('/odoocalc/calculate', type='json', auth='public', website=True, cors="*")
+    @http.route('/odoocalc/calculate', type='json', auth='none', website=True, cors="http://localhost,http://localhost:4200,*", csrf=False)
     def calculate(self, **kw):
         print(request)
-        return json.dump({"result":  1 + 5 })
+        return json.dumps(
+            {
+                "sucess": True,
+                "errorMessage": None,
+                "result":  1 + 5 
+            })
