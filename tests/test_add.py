@@ -1,4 +1,4 @@
-from src import calculator as calc
+from controllers import calculator as calc
 import unittest
 
 class Test_AddFunctionality(unittest.TestCase):
