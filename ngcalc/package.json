@@ -6,7 +6,7 @@
     "fake": "node ./node_modules/nodemon/bin/nodemon.js src/fake-server/index.js --watch src/fake-server",
     "start": "ng serve",
     "build": "ng build",
-    "build-prod": "ng build --prod --output-hashing=none --output-path='./../static/src'",
+    "build-prod": "ng build --prod --output-hashing=none --output-path=\"./../static/src\"",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

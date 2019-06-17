@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Optional, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import * as calc from './constants';
 import { tap, map, catchError } from 'rxjs/operators';
@@ -15,9 +15,10 @@ export class AppComponent implements OnInit{
   inputText: string = "";
   resultText: string;
   outputError: boolean = false;
+  baseUrl: string;
 
-  constructor(private http: HttpClient){
-
+  constructor(private http: HttpClient, @Optional() @Inject('BASE_URL') baseUrl?: string){
+    this.baseUrl = baseUrl ? baseUrl : "http://localhost:8069";
   }
 
   ngOnInit(): void {
@@ -79,7 +80,7 @@ export class AppComponent implements OnInit{
   }
 
   private performApiCall() {
-    this.http.post("http://localhost:8069/odoocalc/calculate", { input: this.inputText }, {
+    this.http.post(`${this.baseUrl}/odoocalc/calculate`, { input: this.inputText }, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
       }),
