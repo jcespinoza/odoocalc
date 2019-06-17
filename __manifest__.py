@@ -6,7 +6,7 @@
         An awesome calculator to make Jimmy happy""",
 
     'description': """
-        This thing hallows you to calculate everything you can think of,
+        This thing allows you to calculate everything you can think of,
         including the amount of time required to find the infinity stones.
     """,
 
@@ -24,12 +24,11 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+
+        'views/templates.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
-        'demo/demo.xml',
+        
     ],
 }
